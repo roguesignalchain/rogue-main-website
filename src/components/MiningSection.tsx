@@ -34,9 +34,9 @@ export const MiningSection: React.FC = () => {
 }`;
 
   const coreCommand = `./core-rogue \\
-  --networkid 800055 \\
+  --rogue \\
   --http \\
-  --http.api eth,net,web3,personal,miner \\
+  --http.api eth,net,web3,miner,randomx \\
   --mine \\
   --miner.threads 8 \\
   --miner.etherbase 0xYourRogueWalletPayoutAddress`;

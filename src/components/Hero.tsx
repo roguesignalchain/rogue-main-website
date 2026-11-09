@@ -190,11 +190,11 @@ export const Hero: React.FC = () => {
               </div>
               <div>
                 <span className="block text-[10px] text-zinc-400 uppercase tracking-widest">[TARGET TIME]</span>
-                <span className="text-sm font-bold text-white">10.00s (LWMA-1)</span>
+                <span className="text-sm font-bold text-white">30.00s (LWMA-1)</span>
               </div>
               <div>
                 <span className="block text-[10px] text-zinc-400 uppercase tracking-widest">[BLOCK REWARD]</span>
-                <span className="text-sm font-bold text-white">8.00 ROGUE</span>
+                <span className="text-sm font-bold text-white">24.00 ROGUE</span>
               </div>
               <div>
                 <span className="block text-[10px] text-zinc-400 uppercase tracking-widest">[EST. HASHRATE]</span>

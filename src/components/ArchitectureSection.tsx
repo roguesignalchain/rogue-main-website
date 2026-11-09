@@ -101,7 +101,7 @@ export const ArchitectureSection: React.FC = () => {
                 <h4 className="text-base font-bold font-display text-white">
                   {t.architecture.specLwmaTitle}
                 </h4>
-                <span className="text-xs font-mono text-zinc-400">Target: 10s • Window: 60 Blocks</span>
+                <span className="text-xs font-mono text-zinc-400">Target: 30s • Window: 60 Blocks (~30m)</span>
               </div>
             </div>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-sans">

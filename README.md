@@ -10,13 +10,14 @@ Rogue Signal synthesizes the Turing-complete smart contract capability of Ethere
 
 * **Network Name**: Rogue Signal
 * **Ticker**: `ROGUE`
-* **Chain ID**: `800055` (`0xc3517`)
-* **Mining Algorithm**: RandomX (`rx/0` profile, 2MB L3 scratchpad per thread)
-* **Target Block Time**: 10 seconds (LWMA-1 difficulty adjustment, $N=60$)
-* **Block Reward**: 8 ROGUE (Halving every 6,300,000 blocks / ~2 years)
-* **Reward Split**: 95% Miner (7.6 ROGUE) / 5% Protocol Treasury (0.4 ROGUE)
+* **Chain ID**: `800055` (`0xc3537`)
+* **Mining Algorithm**: RandomX (`rx/0` profile, 2MB L3 scratchpad per thread, full-node solo mining)
+* **Target Block Time**: 30 seconds (LWMA-1 difficulty adjustment, $N=60$, $\pm 33\%$ clamp)
+* **Block Reward**: 24 ROGUE (Halving every 2,100,000 blocks / ~2 years)
+* **Reward Split**: 95% Miner (22.8 ROGUE) / 5% Protocol Treasury (1.2 ROGUE) + 100% tx fees to miner
 * **Max Supply**: 100,000,000 ROGUE (Hard cap, zero tail emission)
-* **Time Rules**: Strict MTP-11 (Past Median Time) + 15s max future drift
+* **Anti-51% Finality**: `MaxReorgDepth = 90` blocks (~45m) + `ECBP-1100 (MESS)` active from Block 0
+* **Time Rules**: Strict MTP-11 (Past Median Time) + 15s max future drift + 64B max ExtraData
 
 ---
 
