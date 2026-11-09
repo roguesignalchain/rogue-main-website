@@ -34,7 +34,8 @@ const Home: NextPage = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* OpenGraph */}
         <meta property="og:title" content={title} />

@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
           
           {/* Official Emblem Top Anchor */}
           <div className="mb-6 w-16 h-16 rounded-[2px] bg-black border border-white/25 p-2 shadow-[0_0_25px_rgba(255,255,255,0.15)] flex items-center justify-center">
-            <img src="/logo.png" alt="Rogue Signal Insignia" className="w-full h-full object-contain" />
+            <img src="/icon.png" alt="Rogue Signal" className="w-full h-full object-contain" />
           </div>
 
           {/* Status Badge */}

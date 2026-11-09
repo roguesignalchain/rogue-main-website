@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
           {/* Logo / Brand */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-[2px] bg-black border border-white/20 flex items-center justify-center p-1 group-hover:border-white transition-colors">
-              <img src="/logo.png" alt="Rogue Signal" className="w-full h-full object-contain" />
+              <img src="/icon.png" alt="Rogue Signal" className="w-full h-full object-contain" />
             </div>
             <div>
               <div className="flex items-center gap-2">
