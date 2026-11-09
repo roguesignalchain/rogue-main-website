@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useLanguage } from '../context/LanguageContext';
 import { useAddRogueChain } from '../hooks/useAddRogueChain';
-import { Radio, PlusCircle, Check, Globe, Menu, X } from 'lucide-react';
+import { PlusCircle, Check, Menu, X } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-obsidian-950/80 backdrop-blur-md border-b border-border-subtle py-3 shadow-2xl'
+          ? 'bg-black/90 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl'
           : 'bg-transparent py-5'
       }`}
     >
@@ -30,46 +30,52 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo / Brand */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-rogue-500 to-amber-tech flex items-center justify-center p-[2px] shadow-lg shadow-rogue-500/20 group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-obsidian-950 rounded-[6px] flex items-center justify-center">
-                <Radio className="w-5 h-5 text-rogue-500 animate-pulse" />
-              </div>
+            <div className="w-9 h-9 rounded-[2px] bg-black border border-white/20 flex items-center justify-center p-1 group-hover:border-white transition-colors">
+              <img src="/logo.png" alt="Rogue Signal" className="w-full h-full object-contain" />
             </div>
             <div>
-              <span className="font-bold tracking-tight text-lg text-white font-display">
-                ROGUE<span className="text-rogue-500">SIGNAL</span>
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-bold tracking-tight text-lg text-white font-display">
+                  ROGUE SIGNAL
+                </span>
+                <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-[2px] bg-white/10 border border-white/20 text-white">
+                  RX-0
+                </span>
+              </div>
               <span className="block text-[10px] font-mono tracking-widest text-zinc-400">
-                EVM • RANDOMX
+                CHAIN ID: 800055
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-zinc-300">
-            <a href="#origin" className="hover:text-rogue-400 transition-colors">
+          <nav className="hidden lg:flex items-center gap-7 text-xs font-mono uppercase tracking-wider text-zinc-400">
+            <a href="#origin" className="hover:text-white transition-colors">
               {t.nav.origin}
             </a>
-            <a href="#consensus" className="hover:text-rogue-400 transition-colors">
+            <a href="#consensus" className="hover:text-white transition-colors">
               {t.nav.consensus}
             </a>
-            <a href="#architecture" className="hover:text-rogue-400 transition-colors">
+            <a href="#architecture" className="hover:text-white transition-colors">
               {t.nav.architecture}
             </a>
-            <a href="#tokenomics" className="hover:text-rogue-400 transition-colors">
+            <a href="#tokenomics" className="hover:text-white transition-colors">
               {t.nav.tokenomics}
             </a>
-            <a href="#mining" className="hover:text-rogue-400 transition-colors">
+            <a href="#mining" className="hover:text-white transition-colors">
               {t.nav.mining}
             </a>
-            <a href="#roadmap" className="hover:text-rogue-400 transition-colors">
+            <a href="#roadmap" className="hover:text-white transition-colors">
               {t.nav.roadmap}
             </a>
-            <a href="#faq" className="hover:text-rogue-400 transition-colors">
+            <a href="#faq" className="hover:text-white transition-colors">
               {t.nav.faq}
             </a>
-            <a href="#downloads" className="hover:text-rogue-400 transition-colors">
+            <a href="#downloads" className="hover:text-white transition-colors">
               {t.nav.downloads}
+            </a>
+            <a href="https://docs.roguechain.org" target="_blank" rel="noreferrer" className="text-white hover:text-zinc-300 font-bold transition-colors">
+              [ DOCS ↗ ]
             </a>
           </nav>
 
@@ -79,33 +85,33 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => addChain()}
               disabled={loading}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-mono transition-all border ${
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-[2px] text-xs font-mono transition-all border ${
                 success
-                  ? 'bg-emerald-950/60 text-emerald-400 border-emerald-600/50'
-                  : 'bg-obsidian-850 hover:bg-obsidian-800 text-zinc-200 border-border-subtle hover:border-rogue-500/40'
+                  ? 'bg-white text-black font-bold border-white'
+                  : 'bg-zinc-950 hover:bg-zinc-900 text-zinc-200 border-white/15 hover:border-white/40'
               }`}
               title="Add Rogue Signal (Chain ID 800055) to MetaMask"
             >
               {success ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-3.5 h-3.5 text-black" />
                   <span>{t.nav.networkAdded}</span>
                 </>
               ) : (
                 <>
-                  <PlusCircle className="w-3.5 h-3.5 text-rogue-500" />
+                  <PlusCircle className="w-3.5 h-3.5 text-white" />
                   <span>{t.nav.addNetwork}</span>
                 </>
               )}
             </button>
 
             {/* Language Switcher */}
-            <div className="flex items-center bg-obsidian-850 border border-border-subtle rounded-md p-0.5 text-xs font-mono">
+            <div className="flex items-center bg-zinc-950 border border-white/15 rounded-[2px] p-0.5 text-xs font-mono">
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-1 rounded transition-colors ${
+                className={`px-2 py-0.5 rounded-[2px] transition-colors ${
                   language === 'en'
-                    ? 'bg-rogue-500 text-white font-bold'
+                    ? 'bg-white text-black font-bold'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -113,9 +119,9 @@ export const Navbar: React.FC = () => {
               </button>
               <button
                 onClick={() => setLanguage('es')}
-                className={`px-2 py-1 rounded transition-colors ${
+                className={`px-2 py-0.5 rounded-[2px] transition-colors ${
                   language === 'es'
-                    ? 'bg-rogue-500 text-white font-bold'
+                    ? 'bg-white text-black font-bold'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -138,7 +144,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-zinc-400 hover:text-white bg-obsidian-850 border border-border-subtle rounded-md"
+              className="p-2 text-zinc-400 hover:text-white bg-zinc-950 border border-white/15 rounded-[2px]"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -148,82 +154,50 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-obsidian-950 border-b border-border-subtle px-4 pt-4 pb-6 space-y-4">
+        <div className="lg:hidden bg-black border-b border-white/10 px-4 pt-4 pb-6 space-y-4">
           <nav className="flex flex-col space-y-3 text-sm font-mono uppercase tracking-wider text-zinc-300">
-            <a
-              href="#origin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#origin" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.origin}
             </a>
-            <a
-              href="#consensus"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#consensus" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.consensus}
             </a>
-            <a
-              href="#architecture"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#architecture" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.architecture}
             </a>
-            <a
-              href="#tokenomics"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#tokenomics" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.tokenomics}
             </a>
-            <a
-              href="#mining"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#mining" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.mining}
             </a>
-            <a
-              href="#roadmap"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#roadmap" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.roadmap}
             </a>
-            <a
-              href="#faq"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.faq}
             </a>
-            <a
-              href="#downloads"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-rogue-400"
-            >
+            <a href="#downloads" onClick={() => setMobileMenuOpen(false)} className="hover:text-white">
               {t.nav.downloads}
             </a>
           </nav>
 
-          <div className="pt-3 border-t border-border-subtle flex flex-col gap-3">
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-3">
             <div className="flex items-center justify-between">
               <span className="text-xs text-zinc-400 font-mono">Language:</span>
-              <div className="flex items-center bg-obsidian-850 border border-border-subtle rounded-md p-0.5 text-xs font-mono">
+              <div className="flex items-center bg-zinc-950 border border-white/15 rounded-[2px] p-0.5 text-xs font-mono">
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`px-2.5 py-1 rounded ${
-                    language === 'en' ? 'bg-rogue-500 text-white font-bold' : 'text-zinc-400'
+                  className={`px-2.5 py-1 rounded-[2px] ${
+                    language === 'en' ? 'bg-white text-black font-bold' : 'text-zinc-400'
                   }`}
                 >
                   EN
                 </button>
                 <button
                   onClick={() => setLanguage('es')}
-                  className={`px-2.5 py-1 rounded ${
-                    language === 'es' ? 'bg-rogue-500 text-white font-bold' : 'text-zinc-400'
+                  className={`px-2.5 py-1 rounded-[2px] ${
+                    language === 'es' ? 'bg-white text-black font-bold' : 'text-zinc-400'
                   }`}
                 >
                   ES
@@ -236,9 +210,9 @@ export const Navbar: React.FC = () => {
                 addChain();
                 setMobileMenuOpen(false);
               }}
-              className="w-full py-2 bg-obsidian-850 text-zinc-200 border border-border-subtle rounded-md text-xs font-mono flex items-center justify-center gap-2"
+              className="w-full py-2 bg-zinc-950 text-zinc-200 border border-white/15 rounded-[2px] text-xs font-mono flex items-center justify-center gap-2"
             >
-              <PlusCircle className="w-4 h-4 text-rogue-500" />
+              <PlusCircle className="w-4 h-4 text-white" />
               <span>{t.nav.addNetwork}</span>
             </button>
 
@@ -251,4 +225,3 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
-

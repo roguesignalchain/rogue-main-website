@@ -51,11 +51,11 @@ export const FaqSection: React.FC = () => {
       : faqItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="faq" className="py-24 border-t border-border-subtle relative bg-obsidian-950/60">
+    <section id="faq" className="py-24 border-t border-white/10 relative bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded bg-rogue-500/10 border border-rogue-500/20 text-rogue-400 font-mono text-xs uppercase tracking-widest mb-3">
-            {t.faq.badge}
+          <div className="inline-block px-3 py-1 rounded-[2px] bg-white/10 border border-white/20 text-white font-mono text-xs uppercase tracking-widest mb-3">
+            [{t.faq.badge}]
           </div>
           <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white uppercase">
             {t.faq.title}
@@ -74,10 +74,10 @@ export const FaqSection: React.FC = () => {
                 setActiveCategory(cat);
                 setOpenIndex(null);
               }}
-              className={`px-4 py-2 rounded-lg text-xs font-mono uppercase tracking-wider transition-all border ${
+              className={`px-4 py-2 rounded-[2px] text-xs font-mono uppercase tracking-wider transition-all border ${
                 activeCategory === cat
-                  ? 'bg-rogue-500/20 text-rogue-400 border-rogue-500/40 font-bold'
-                  : 'bg-obsidian-900/40 text-zinc-400 border-border-subtle hover:text-white'
+                  ? 'bg-white text-black border-white font-bold'
+                  : 'bg-black text-zinc-400 border-white/10 hover:text-white hover:border-white/30'
               }`}
             >
               {cat === 'all' && t.faq.tabAll}
@@ -96,24 +96,24 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="rounded-xl bg-obsidian-900/60 border border-border-subtle overflow-hidden transition-colors"
+                className="rounded-[2px] bg-[#0A0A0C] border border-white/10 overflow-hidden transition-colors"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:text-rogue-400 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 hover:text-white transition-colors"
                 >
                   <span className="font-bold text-base sm:text-lg font-display text-white">
                     {item.q}
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-rogue-500' : ''
+                      isOpen ? 'rotate-180 text-white' : ''
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-zinc-400 font-sans leading-relaxed border-t border-border-subtle/40">
+                  <div className="px-6 pb-6 pt-1 text-sm text-zinc-400 font-sans leading-relaxed border-t border-white/10">
                     {item.a}
                   </div>
                 )}
@@ -125,4 +125,3 @@ export const FaqSection: React.FC = () => {
     </section>
   );
 };
-

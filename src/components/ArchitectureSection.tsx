@@ -12,9 +12,6 @@ export const ArchitectureSection: React.FC = () => {
       title: t.architecture.step1Title,
       desc: t.architecture.step1Desc,
       tag: 'EVM Core',
-      color: 'text-emerald-400',
-      bgColor: 'bg-emerald-500/10',
-      borderColor: 'border-emerald-500/20',
     },
     {
       num: '02',
@@ -22,9 +19,6 @@ export const ArchitectureSection: React.FC = () => {
       title: t.architecture.step2Title,
       desc: t.architecture.step2Desc,
       tag: 'Seed Binding',
-      color: 'text-rogue-400',
-      bgColor: 'bg-rogue-500/10',
-      borderColor: 'border-rogue-500/20',
     },
     {
       num: '03',
@@ -32,9 +26,6 @@ export const ArchitectureSection: React.FC = () => {
       title: t.architecture.step3Title,
       desc: t.architecture.step3Desc,
       tag: 'RandomX JIT',
-      color: 'text-amber-tech',
-      bgColor: 'bg-amber-tech/10',
-      borderColor: 'border-amber-tech/20',
     },
     {
       num: '04',
@@ -42,18 +33,15 @@ export const ArchitectureSection: React.FC = () => {
       title: t.architecture.step4Title,
       desc: t.architecture.step4Desc,
       tag: 'P2P Gossip',
-      color: 'text-cyan-400',
-      bgColor: 'bg-cyan-500/10',
-      borderColor: 'border-cyan-500/20',
     },
   ];
 
   return (
-    <section id="architecture" className="py-24 border-t border-border-subtle relative bg-obsidian-950/60">
+    <section id="architecture" className="py-24 border-t border-white/10 relative bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block px-3 py-1 rounded bg-rogue-500/10 border border-rogue-500/20 text-rogue-400 font-mono text-xs uppercase tracking-widest mb-3">
-            {t.architecture.badge}
+          <div className="inline-block px-3 py-1 rounded-[2px] bg-white/10 border border-white/20 text-white font-mono text-xs uppercase tracking-widest mb-3">
+            [{t.architecture.badge}]
           </div>
           <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white uppercase">
             {t.architecture.title}
@@ -65,22 +53,22 @@ export const ArchitectureSection: React.FC = () => {
 
         {/* 4-Step Block Lifecycle Flow */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {lifecycleSteps.map((step, idx) => {
+          {lifecycleSteps.map((step) => {
             const Icon = step.icon;
             return (
               <div
                 key={step.num}
-                className="p-6 rounded-xl bg-obsidian-900/60 border border-border-subtle hover:border-rogue-500/40 transition-all flex flex-col justify-between group"
+                className="p-6 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs text-zinc-400 font-bold">{step.num}</span>
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider ${step.bgColor} ${step.color} border ${step.borderColor}`}>
+                    <span className="font-mono text-xs text-zinc-400 font-bold">[{step.num}]</span>
+                    <span className="px-2 py-0.5 rounded-[2px] text-[10px] font-mono uppercase tracking-wider bg-white/10 text-white border border-white/20">
                       {step.tag}
                     </span>
                   </div>
 
-                  <div className={`w-12 h-12 rounded-lg ${step.bgColor} border ${step.borderColor} flex items-center justify-center ${step.color} mb-5 group-hover:scale-105 transition-transform`}>
+                  <div className="w-12 h-12 rounded-[2px] bg-black border border-white/20 flex items-center justify-center text-white mb-5 group-hover:border-white transition-colors">
                     <Icon className="w-6 h-6" />
                   </div>
 
@@ -92,8 +80,8 @@ export const ArchitectureSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-border-subtle/50 text-[10px] font-mono text-zinc-400 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="mt-6 pt-4 border-t border-white/10 text-[10px] font-mono text-zinc-400 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   Deterministic Execution
                 </div>
               </div>
@@ -104,9 +92,9 @@ export const ArchitectureSection: React.FC = () => {
         {/* Interactive Seed Rotation & Deep Specs Grid */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* LWMA-1 */}
-          <div className="p-7 rounded-xl bg-obsidian-900/50 border border-border-subtle hover:border-rogue-500/30 transition-all">
+          <div className="p-7 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-lg bg-rogue-500/10 border border-rogue-500/20 text-rogue-500">
+              <div className="p-2.5 rounded-[2px] bg-black border border-white/20 text-white">
                 <Activity className="w-5 h-5" />
               </div>
               <div>
@@ -122,9 +110,9 @@ export const ArchitectureSection: React.FC = () => {
           </div>
 
           {/* MTP-11 & Drift */}
-          <div className="p-7 rounded-xl bg-obsidian-900/50 border border-border-subtle hover:border-rogue-500/30 transition-all">
+          <div className="p-7 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+              <div className="p-2.5 rounded-[2px] bg-black border border-white/20 text-white">
                 <Shield className="w-5 h-5" />
               </div>
               <div>
@@ -140,9 +128,9 @@ export const ArchitectureSection: React.FC = () => {
           </div>
 
           {/* Seed Rotation */}
-          <div className="p-7 rounded-xl bg-obsidian-900/50 border border-border-subtle hover:border-rogue-500/30 transition-all">
+          <div className="p-7 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-lg bg-amber-tech/10 border border-amber-tech/20 text-amber-tech">
+              <div className="p-2.5 rounded-[2px] bg-black border border-white/20 text-white">
                 <RefreshCw className="w-5 h-5" />
               </div>
               <div>
@@ -158,9 +146,9 @@ export const ArchitectureSection: React.FC = () => {
           </div>
 
           {/* 2MB Scratchpad */}
-          <div className="p-7 rounded-xl bg-obsidian-900/50 border border-border-subtle hover:border-rogue-500/30 transition-all">
+          <div className="p-7 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+              <div className="p-2.5 rounded-[2px] bg-black border border-white/20 text-white">
                 <HardDrive className="w-5 h-5" />
               </div>
               <div>
@@ -179,4 +167,3 @@ export const ArchitectureSection: React.FC = () => {
     </section>
   );
 };
-

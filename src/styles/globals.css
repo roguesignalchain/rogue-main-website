@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-rogue: #ff5500;
-  --color-amber-tech: #ffb300;
-  --bg-dark: #0a0a0c;
-  --card-dark: #101015;
+  --color-rogue: #ffffff;
+  --color-amber-tech: #d4d4d8;
+  --bg-dark: #000000;
+  --card-dark: #0a0a0c;
 }
 
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  background-color: #000000;
 }
 
 body {
-  background-color: #0a0a0c;
-  color: #ededed;
+  background-color: #000000;
+  color: #d4d4d8;
   font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
@@ -31,34 +32,55 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0c;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #22222a;
-  border-radius: 3px;
+  background: #27272a;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff5500;
+  background: #52525b;
+}
+
+/* Tactical HUD Reticle & Crosshairs */
+.hud-corner {
+  position: relative;
+}
+
+.hud-corner::before {
+  content: '+';
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+}
+
+.hud-corner::after {
+  content: '+';
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
 }
 
 /* Grid & Scanlines effect */
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
-.glow-orange {
-  box-shadow: 0 0 25px rgba(255, 85, 0, 0.25);
+.glow-tactical {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
 .text-glow {
-  text-shadow: 0 0 16px rgba(255, 85, 0, 0.5);
-}
-
-.text-amber-glow {
-  text-shadow: 0 0 16px rgba(255, 179, 0, 0.4);
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
 }

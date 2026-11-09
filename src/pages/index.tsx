@@ -34,13 +34,14 @@ const Home: NextPage = () => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
 
         {/* OpenGraph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://roguesignal.org" />
+        <meta property="og:image" content="/cover.png" />
         <meta property="og:site_name" content="Rogue Signal" />
 
         {/* Twitter Card */}
@@ -48,12 +49,13 @@ const Home: NextPage = () => {
         <meta name="twitter:site" content="@roguesignal" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="/cover.png" />
 
         {/* Theme color */}
-        <meta name="theme-color" content="#0a0a0c" />
+        <meta name="theme-color" content="#000000" />
       </Head>
 
-      <div className="min-h-screen bg-obsidian-900 text-zinc-100 selection:bg-rogue-500 selection:text-white">
+      <div className="min-h-screen bg-black text-zinc-100 selection:bg-white selection:text-black">
         <Navbar />
         <main>
           <Hero />

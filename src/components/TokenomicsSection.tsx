@@ -55,11 +55,11 @@ export const TokenomicsSection: React.FC = () => {
   ];
 
   return (
-    <section id="tokenomics" className="py-24 border-t border-border-subtle relative bg-obsidian-950/40">
+    <section id="tokenomics" className="py-24 border-t border-white/10 relative bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block px-3 py-1 rounded bg-amber-tech/10 border border-amber-tech/20 text-amber-tech font-mono text-xs uppercase tracking-widest mb-3">
-            {t.tokenomics.badge}
+          <div className="inline-block px-3 py-1 rounded-[2px] bg-white/10 border border-white/20 text-white font-mono text-xs uppercase tracking-widest mb-3">
+            [{t.tokenomics.badge}]
           </div>
           <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white uppercase">
             {t.tokenomics.title}
@@ -71,10 +71,10 @@ export const TokenomicsSection: React.FC = () => {
 
         {/* 4 Massive Parameter Blocks */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="p-6 rounded-xl bg-obsidian-900/60 border border-border-subtle">
-            <Coins className="w-5 h-5 text-amber-tech mb-3" />
+          <div className="p-6 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
+            <Coins className="w-5 h-5 text-white mb-3" />
             <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block">
-              {t.tokenomics.hardCapLabel}
+              [{t.tokenomics.hardCapLabel}]
             </span>
             <div className="text-2xl sm:text-3xl font-black font-display text-white mt-1">
               {t.tokenomics.hardCapVal}
@@ -84,10 +84,10 @@ export const TokenomicsSection: React.FC = () => {
             </span>
           </div>
 
-          <div className="p-6 rounded-xl bg-obsidian-900/60 border border-border-subtle">
-            <TrendingDown className="w-5 h-5 text-rogue-500 mb-3" />
+          <div className="p-6 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
+            <TrendingDown className="w-5 h-5 text-white mb-3" />
             <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block">
-              {t.tokenomics.blockRewardLabel}
+              [{t.tokenomics.blockRewardLabel}]
             </span>
             <div className="text-2xl sm:text-3xl font-black font-display text-white mt-1">
               {t.tokenomics.blockRewardVal}
@@ -97,10 +97,10 @@ export const TokenomicsSection: React.FC = () => {
             </span>
           </div>
 
-          <div className="p-6 rounded-xl bg-obsidian-900/60 border border-border-subtle">
-            <ShieldCheck className="w-5 h-5 text-emerald-400 mb-3" />
+          <div className="p-6 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
+            <ShieldCheck className="w-5 h-5 text-white mb-3" />
             <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block">
-              {t.tokenomics.halvingPeriodLabel}
+              [{t.tokenomics.halvingPeriodLabel}]
             </span>
             <div className="text-2xl sm:text-3xl font-black font-display text-white mt-1">
               {t.tokenomics.halvingPeriodVal}
@@ -110,10 +110,10 @@ export const TokenomicsSection: React.FC = () => {
             </span>
           </div>
 
-          <div className="p-6 rounded-xl bg-obsidian-900/60 border border-border-subtle">
-            <Users className="w-5 h-5 text-cyan-400 mb-3" />
+          <div className="p-6 rounded-[2px] bg-[#0A0A0C] border border-white/10 hover:border-white/30 transition-all">
+            <Users className="w-5 h-5 text-white mb-3" />
             <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block">
-              {t.tokenomics.splitLabel}
+              [{t.tokenomics.splitLabel}]
             </span>
             <div className="text-2xl sm:text-3xl font-black font-display text-white mt-1">
               {t.tokenomics.splitVal}
@@ -125,9 +125,9 @@ export const TokenomicsSection: React.FC = () => {
         </div>
 
         {/* Treasury Transparency Notice Box */}
-        <div className="p-6 sm:p-8 rounded-xl bg-obsidian-900/40 border border-rogue-500/30 mb-16 relative overflow-hidden">
+        <div className="p-6 sm:p-8 rounded-[2px] bg-[#0A0A0C] border border-white/15 mb-16 relative overflow-hidden">
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-rogue-500/10 border border-rogue-500/20 rounded-lg text-rogue-500 shrink-0">
+            <div className="p-3 bg-black border border-white/20 rounded-[2px] text-white shrink-0">
               <Info className="w-6 h-6" />
             </div>
             <div>
@@ -142,7 +142,7 @@ export const TokenomicsSection: React.FC = () => {
         </div>
 
         {/* Interactive Halving Curve & Projection */}
-        <div className="rounded-xl bg-obsidian-900/60 border border-border-subtle p-6 sm:p-8">
+        <div className="rounded-[2px] bg-[#0A0A0C] border border-white/10 p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <h3 className="text-xl font-bold font-display text-white">
@@ -154,14 +154,14 @@ export const TokenomicsSection: React.FC = () => {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono text-zinc-400">Total Supply Cap:</span>
-              <span className="px-2.5 py-1 bg-obsidian-850 rounded border border-border-subtle font-mono text-xs font-bold text-amber-tech">
+              <span className="px-2.5 py-1 bg-black rounded-[2px] border border-white/20 font-mono text-xs font-bold text-white">
                 100,000,000 ROGUE
               </span>
             </div>
           </div>
 
           {/* SVG Visual Emission Curve */}
-          <div className="relative w-full h-44 sm:h-52 bg-obsidian-950/80 rounded-lg border border-border-subtle p-4 flex items-end justify-between overflow-hidden">
+          <div className="relative w-full h-44 sm:h-52 bg-black rounded-[2px] border border-white/10 p-4 flex items-end justify-between overflow-hidden">
             <svg
               className="absolute inset-0 w-full h-full p-4 pointer-events-none"
               preserveAspectRatio="none"
@@ -169,8 +169,8 @@ export const TokenomicsSection: React.FC = () => {
             >
               <defs>
                 <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#ff5500" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#ff5500" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0.0" />
                 </linearGradient>
               </defs>
               {/* Halving Curve Area */}
@@ -182,22 +182,22 @@ export const TokenomicsSection: React.FC = () => {
               <path
                 d="M 50,40 L 250,40 L 250,90 L 500,90 L 500,135 L 750,135 L 750,160 L 950,160"
                 fill="none"
-                stroke="#ff5500"
-                strokeWidth="3"
+                stroke="#ffffff"
+                strokeWidth="2.5"
               />
               {/* Cumulative Cap Line */}
               <path
                 d="M 50,140 Q 250,70 500,45 T 950,25"
                 fill="none"
-                stroke="#ffb300"
-                strokeWidth="2"
+                stroke="#a1a1aa"
+                strokeWidth="1.5"
                 strokeDasharray="4 4"
               />
             </svg>
 
             {/* Labels overlay inside graph */}
             <div className="absolute top-4 left-6 text-[10px] font-mono text-zinc-400">
-              Reward / Block (Orange) & Cumulative Supply (Dashed Amber)
+              [REWARD / BLOCK: SOLID WHITE • CUMULATIVE EMISSION: DASHED ZINC]
             </div>
           </div>
 
@@ -207,15 +207,15 @@ export const TokenomicsSection: React.FC = () => {
               <button
                 key={era.era}
                 onClick={() => setActiveEra(era.era)}
-                className={`p-3 rounded-lg border text-left transition-all ${
+                className={`p-3 rounded-[2px] border text-left transition-all ${
                   activeEra === era.era
-                    ? 'bg-obsidian-850 border-rogue-500 shadow-lg shadow-rogue-500/10'
-                    : 'bg-obsidian-950/40 border-border-subtle hover:border-zinc-700'
+                    ? 'bg-zinc-900 border-white shadow-[0_0_15px_rgba(255,255,255,0.1)]'
+                    : 'bg-black border-white/10 hover:border-white/30'
                 }`}
               >
                 <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400 mb-1">
                   <span>{era.status}</span>
-                  <span className="text-amber-tech font-bold">{era.years}</span>
+                  <span className="text-white font-bold">{era.years}</span>
                 </div>
                 <div className="text-sm font-bold text-white font-mono">{era.reward}</div>
                 <div className="text-[11px] text-zinc-400 font-mono mt-1">
@@ -229,4 +229,3 @@ export const TokenomicsSection: React.FC = () => {
     </section>
   );
 };
-

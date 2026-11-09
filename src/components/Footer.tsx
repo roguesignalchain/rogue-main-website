@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Radio, Send, ExternalLink, Activity } from 'lucide-react';
+import { Send, ExternalLink } from 'lucide-react';
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -22,19 +22,17 @@ export const Footer: React.FC = () => {
   const { t, language, setLanguage } = useLanguage();
 
   return (
-    <footer className="border-t border-border-subtle bg-obsidian-950 pt-16 pb-12 text-zinc-400 font-sans">
+    <footer className="border-t border-white/10 bg-black pt-16 pb-12 text-zinc-400 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Col */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rogue-500 to-amber-tech flex items-center justify-center p-[2px]">
-                <div className="w-full h-full bg-obsidian-950 rounded-[6px] flex items-center justify-center">
-                  <Radio className="w-4 h-4 text-rogue-500" />
-                </div>
+              <div className="w-8 h-8 rounded-[2px] bg-black border border-white/20 p-1 flex items-center justify-center">
+                <img src="/logo.png" alt="Rogue Signal" className="w-full h-full object-contain" />
               </div>
               <span className="font-bold text-lg text-white font-display tracking-tight">
-                ROGUE<span className="text-rogue-500">SIGNAL</span>
+                ROGUE SIGNAL
               </span>
             </div>
 
@@ -43,8 +41,8 @@ export const Footer: React.FC = () => {
             </p>
 
             {/* Network Health Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-obsidian-900 border border-border-subtle text-[11px] font-mono text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[2px] bg-[#0A0A0C] border border-white/15 text-[11px] font-mono text-white">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               <span>{t.footer.statusHealthy}</span>
             </div>
           </div>
@@ -56,27 +54,27 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs font-mono">
               <li>
-                <a href="#origin" className="hover:text-rogue-400 transition-colors">
+                <a href="#origin" className="hover:text-white transition-colors">
                   {t.nav.origin}
                 </a>
               </li>
               <li>
-                <a href="#consensus" className="hover:text-rogue-400 transition-colors">
+                <a href="#consensus" className="hover:text-white transition-colors">
                   {t.nav.consensus}
                 </a>
               </li>
               <li>
-                <a href="#architecture" className="hover:text-rogue-400 transition-colors">
+                <a href="#architecture" className="hover:text-white transition-colors">
                   {t.nav.architecture}
                 </a>
               </li>
               <li>
-                <a href="#tokenomics" className="hover:text-rogue-400 transition-colors">
+                <a href="#tokenomics" className="hover:text-white transition-colors">
                   {t.nav.tokenomics}
                 </a>
               </li>
               <li>
-                <a href="#roadmap" className="hover:text-rogue-400 transition-colors">
+                <a href="#roadmap" className="hover:text-white transition-colors">
                   {t.nav.roadmap}
                 </a>
               </li>
@@ -94,7 +92,7 @@ export const Footer: React.FC = () => {
                   href="https://github.com/roguesignalchain/rogue-core-chain"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-rogue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <GithubIcon className="w-3.5 h-3.5" />
                   <span>rogue-core-chain</span>
@@ -105,7 +103,7 @@ export const Footer: React.FC = () => {
                   href="https://github.com/roguesignalchain/rogue-desktop-client"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-rogue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <GithubIcon className="w-3.5 h-3.5" />
                   <span>rogue-desktop-client</span>
@@ -113,13 +111,13 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://github.com/roguesignalchain/rogue-main-website"
+                  href="https://docs.roguechain.org"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-rogue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
-                  <GithubIcon className="w-3.5 h-3.5" />
-                  <span>rogue-main-website</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>docs.roguechain.org</span>
                 </a>
               </li>
               <li>
@@ -127,7 +125,7 @@ export const Footer: React.FC = () => {
                   href="https://explorer.roguesignal.org"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-rogue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>Block Explorer</span>
@@ -146,7 +144,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com/roguesignalchain"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded bg-obsidian-900 border border-border-subtle flex items-center justify-center text-zinc-300 hover:text-rogue-400 hover:border-rogue-500/40 transition-colors"
+                className="w-8 h-8 rounded-[2px] bg-black border border-white/15 flex items-center justify-center text-zinc-300 hover:text-white hover:border-white transition-colors"
                 title="GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
@@ -155,7 +153,7 @@ export const Footer: React.FC = () => {
                 href="https://x.com/roguesignal"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded bg-obsidian-900 border border-border-subtle flex items-center justify-center text-zinc-300 hover:text-rogue-400 hover:border-rogue-500/40 transition-colors"
+                className="w-8 h-8 rounded-[2px] bg-black border border-white/15 flex items-center justify-center text-zinc-300 hover:text-white hover:border-white transition-colors"
                 title="X / Twitter"
               >
                 <TwitterIcon className="w-4 h-4" />
@@ -164,7 +162,7 @@ export const Footer: React.FC = () => {
                 href="https://t.me/roguesignalchain"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded bg-obsidian-900 border border-border-subtle flex items-center justify-center text-zinc-300 hover:text-rogue-400 hover:border-rogue-500/40 transition-colors"
+                className="w-8 h-8 rounded-[2px] bg-black border border-white/15 flex items-center justify-center text-zinc-300 hover:text-white hover:border-white transition-colors"
                 title="Telegram"
               >
                 <Send className="w-4 h-4" />
@@ -175,20 +173,20 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-3 py-1 rounded text-xs font-mono border ${
+                className={`px-3 py-1 rounded-[2px] text-xs font-mono border ${
                   language === 'en'
-                    ? 'bg-rogue-500 text-white border-rogue-500 font-bold'
-                    : 'bg-obsidian-900 text-zinc-400 border-border-subtle'
+                    ? 'bg-white text-black border-white font-bold'
+                    : 'bg-black text-zinc-400 border-white/15 hover:border-white/40'
                 }`}
               >
                 English
               </button>
               <button
                 onClick={() => setLanguage('es')}
-                className={`px-3 py-1 rounded text-xs font-mono border ${
+                className={`px-3 py-1 rounded-[2px] text-xs font-mono border ${
                   language === 'es'
-                    ? 'bg-rogue-500 text-white border-rogue-500 font-bold'
-                    : 'bg-obsidian-900 text-zinc-400 border-border-subtle'
+                    ? 'bg-white text-black border-white font-bold'
+                    : 'bg-black text-zinc-400 border-white/15 hover:border-white/40'
                 }`}
               >
                 Español
@@ -198,7 +196,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-400">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-400">
           <div>{t.footer.rights}</div>
           <div className="text-zinc-400">{t.footer.chainInfo}</div>
         </div>
@@ -206,4 +204,3 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
-
