@@ -194,7 +194,7 @@ export const Hero: React.FC = () => {
               </div>
               <div>
                 <span className="block text-[10px] text-zinc-400 uppercase tracking-widest">[BLOCK REWARD]</span>
-                <span className="text-sm font-bold text-white">24.00 ROGUE</span>
+                <span className="text-sm font-bold text-white">25.00 ROGUE</span>
               </div>
               <div>
                 <span className="block text-[10px] text-zinc-400 uppercase tracking-widest">[EST. HASHRATE]</span>
